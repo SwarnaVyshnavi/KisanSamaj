@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="weatherdemo.css">
+     <link rel="stylesheet" href="main.css">
+    
+    <title>kisan weather</title>
+    <style type="text/css">
+           @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Titan+One&display=swap');
+  .dropdown-menu>a:hover {
+    background-color: #0d6efd;
+    color: #ffffff !important;
+  }
+    </style>
+</head>
+<body onload="DefaultScreen()">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+<li class="nav-item" style="position:absolute;top:-8px;left:4px;">
+      <a class="nav-link1 text-white " href="index.html">
+        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/hbbeevsh.json" trigger="hover"
+          colors="primary:#121331,secondary:#ffffff" style="width:60px;height:60px">
+        </lord-icon><div class="divcls" style="position:relative;top:-33px;left:82px;text-decoration:none;font-family: 'Roboto Slab', serif;
+        font-family: 'Titan One', cursive;font-size:larger;color: white;">Kisan Samaj</div>
+      </a>
+    </li>
+  <ul class="nav justify-content-end " style="padding-top: 10px;" >
+  <li class="nav-item">
+    <a class="nav-link text-white" href="index.html"><b>Home</b></a>
+  </li>
+  
+  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>
+         Explore </b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item text-primary" href="#outsp1" >Weather</a>
+           <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-primary" href="index.html#outsp2">Advanced Technologies</a> 
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-primary" href="index.html#outsp3">Government Schemes</a>
+           <div class="dropdown-divider"></div>
+           <a class="dropdown-item text-primary" href="index.html#outsp4">Kisan Bazaar</a> 
+           <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-primary" href="index.html#outsp5">Crop Demand</a>
+             <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-primary" href="index.html#outsp6">Storage</a>
+        </div>
+      </li>
+      <li class="nav-item">
+    <a class="nav-link text-white" href="index.html#about"><b>About</b></a>
+  </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <!-- <li class="nav-item">
+    <a class="nav-link text-white" id="navid" href="#">Language</a>
+  </li>&nbsp;&nbsp;&nbsp;-->
+  
+</ul>
+<center><hr width="98%" style="border: 0.5px solid white;position:relative;top:-10px;"></center>
+
+
+	
+	<div id="google_translate_element"></div>
+	
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+				{pageLanguage: 'en'},
+				'google_translate_element'
+			);
+		}
+	</script>
+	
+	<script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?
+		cb=googleTranslateElementInit">
+	</script>
+
+<br/><br/>
+
+<center>
+        <h1 id="Para1" style="color: white;"> Weather Forecast</h1>
+        <p id="inputContainer" style="color: white;">City: <input type="text" id="cityInput"></p><br><br>
+        <button type="button" class="but" onclick="GetInfo()">Search</button><br><br>
+
+        
+    </center>
+    <center><h2 id="cityName" style="color: white;top:264px;">Visakhapatnam</h2></center>
+    
+    <div id = "weatherContainer">
+        <div id="iconsContainer">    
+            <div class = "icons">
+                <p class="weather" id="day1"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img1"></div>
+                <p class="minValues" id="day1Min">Loading...</p>
+                <p class="maxValues" id="day1Max">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day2"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img2"></div>
+                <p class="minValues" id="day2Min">Loading...</p>
+                <p class="maxValues" id="day2Max">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day3"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img3"></div>
+                <p class="minValues" id="day3Min">Loading...</p>
+                <p class="maxValues" id="day3Max">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day4"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img4"></div>
+                <p class="minValues" id="day4Min">Loading...</p>
+                <p class="maxValues" id="day4Max">Loading...</p>
+            </div>
+            <div class = "icons">
+                <p class="weather" id="day5"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img5"></div>
+                <p class="minValues" id="day5Min">Loading...</p>
+                <p class="maxValues" id="day5Max">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+
+        <script src="weather.js"></script><br><br>
+        <hr class="featurette-divider bg-dark"><center>
+ <div class="container ">
+        <footer class="py-3 my-4 justify-content-center" >
+            <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+<li class="nav-item" style="position:absolute;padding-left: 430px;">
+      <a class="nav-link1 text-white " href="index.html">
+        <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/hbbeevsh.json" trigger="hover"
+          colors="primary:#121331,secondary:success" style="width:60px;height:60px">
+        </lord-icon>
+          <p class="text-center text-muted" style="color: black;"><b>© 2022 KISAN SAMAJ, Inc</b></p>
+        </footer>
+      </div></center>
+</div>
+
+
+</body>
+</html>
